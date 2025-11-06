@@ -1,0 +1,226 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --color-background: #121212; /* Deep dark background */
+    --color-text: #E0E0E0;      /* Light gray text */
+    --color-primary: #00ADB5;   /* Bright Teal/Aqua accent */
+    --color-secondary: #393E46; /* Dark gray for subtle borders/cards */
+    --color-highlight: #4a4a4a; /* Slightly lighter gray for hover effects */
+    --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-body: 'Roboto', Arial, sans-serif;
+}
+
+/* Ensure a basic font is set if you don't use Google Fonts */
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased; /* Better text rendering */
+}
+
+/* Remove default link underline and set accent color */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 1.8em;
+    border-bottom: 3px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+}
+
+/* Layout Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header/Hero Section --- */
+.hero {
+    background: linear-gradient(135deg, #1f2833, #0a0a0a); /* Gradient background */
+    padding: 80px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--color-primary);
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.hero h2 {
+    font-size: 1.5em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.bio-statement {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #a8a8a8;
+}
+
+.contact-links a, .contact-links span {
+    font-size: 1.1em;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+/* --- Section Styling --- */
+.section {
+    padding: 40px 0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, var(--color-secondary), transparent);
+    margin: 40px 0;
+}
+
+/* --- Project Grid --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.project-card {
+    background-color: var(--color-secondary);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-left: 5px solid var(--color-primary); /* Accent border */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    background-color: var(--color-highlight);
+}
+
+.project-card h4 a {
+    font-size: 1.4em;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.project-card h4 a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.tools {
+    font-size: 0.9em;
+    color: #a8a8a8;
+    margin-top: 15px;
+}
+
+.view-more-projects {
+    text-align: center;
+    font-size: 1.2em;
+    padding-top: 20px;
+}
+
+
+/* --- Skills & Experience Layout --- */
+.skills-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skills-list > div {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--color-secondary);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.skills-list h4 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.columns-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.experience-card {
+    padding: 15px;
+    background-color: #1e1e1e; /* Slightly different dark shade */
+    border-left: 3px solid var(--color-primary);
+    border-radius: 5px;
+}
+
+.experience-card h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.experience-card p {
+    margin: 5px 0;
+}
+
+.experience-card .date {
+    font-size: 0.9em;
+    color: #999999;
+}
+
+/* Footer */
+footer {
+    background-color: #0d0d0d;
+    color: #666666;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    .skills-list {
+        flex-direction: column;
+    }
+}
