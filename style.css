@@ -12,6 +12,17 @@
   --radius:14px;
 }
 
+a {
+    color: var(--teal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline;
+}
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
