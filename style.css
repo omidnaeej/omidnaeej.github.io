@@ -1,4 +1,4 @@
-/* --- Global Styles & Variables --- */
+/* --- Global Styles & Variables (No Change) --- */
 :root {
     --color-background: #121212; /* Deep dark background */
     --color-text: #E0E0E0;      /* Light gray text */
@@ -54,13 +54,47 @@ h3 {
     padding: 0 20px;
 }
 
-/* --- Header/Hero Section --- */
+/* --- Header/Hero Section (Modified) --- */
 .hero {
-    background: linear-gradient(135deg, #1f2833, #0a0a0a); /* Gradient background */
-    padding: 80px 0;
+    /* Base background is still dark/gradient for contrast */
+    background: linear-gradient(135deg, #1f2833, #0a0a0a);
+    padding: 80px 0 120px 0; /* Increased padding bottom for the wave height */
     text-align: center;
-    border-bottom: 5px solid var(--color-primary);
-    margin-bottom: 40px;
+    /* border-bottom: 5px solid var(--color-primary); <-- REMOVE THIS, replaced by wave */
+    margin-bottom: 0; /* Remove margin-bottom as the wave handles the separation */
+    position: relative; /* Essential for positioning the ::after wave */
+    overflow: hidden; /* Ensures the wave doesn't extend beyond the header */
+}
+
+/* ❗ The Waving Aqua Effect ❗ */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Height of the wave section */
+    
+    /* Use a bright aqua gradient for the wave background */
+    background: linear-gradient(90deg, #00ADB5, #00FFD1);
+    
+    /* CSS Clip-Path to create a wave shape */
+    /* This defines a complex polygon path that simulates a wave */
+    clip-path: polygon(
+        0% 100%, 
+        0% 50%, 
+        10% 65%, 
+        25% 45%, 
+        40% 70%, 
+        50% 50%, 
+        60% 75%, 
+        75% 45%, 
+        90% 65%, 
+        100% 50%, 
+        100% 100%
+    );
+    /* Transform is used to slightly offset the wave from the bottom edge */
+    transform: translateY(1px); 
 }
 
 .hero h1 {
