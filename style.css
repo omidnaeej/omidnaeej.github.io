@@ -1,4 +1,4 @@
-/* --- Global Styles & Variables (No Change) --- */
+/* --- Global Styles & Variables --- */
 :root {
     --color-background: #121212; /* Deep dark background */
     --color-text: #E0E0E0;      /* Light gray text */
@@ -54,19 +54,18 @@ h3 {
     padding: 0 20px;
 }
 
-/* --- Header/Hero Section (Modified) --- */
+/* --- Header/Hero Section (with Aqua Wave) --- */
 .hero {
     /* Base background is still dark/gradient for contrast */
     background: linear-gradient(135deg, #1f2833, #0a0a0a);
     padding: 80px 0 120px 0; /* Increased padding bottom for the wave height */
     text-align: center;
-    /* border-bottom: 5px solid var(--color-primary); <-- REMOVE THIS, replaced by wave */
-    margin-bottom: 0; /* Remove margin-bottom as the wave handles the separation */
+    margin-bottom: 0; 
     position: relative; /* Essential for positioning the ::after wave */
     overflow: hidden; /* Ensures the wave doesn't extend beyond the header */
 }
 
-/* ❗ The Waving Aqua Effect ❗ */
+/* 🌊 The Waving Aqua Effect */
 .hero::after {
     content: '';
     position: absolute;
@@ -79,7 +78,6 @@ h3 {
     background: linear-gradient(90deg, #00ADB5, #00FFD1);
     
     /* CSS Clip-Path to create a wave shape */
-    /* This defines a complex polygon path that simulates a wave */
     clip-path: polygon(
         0% 100%, 
         0% 50%, 
@@ -93,7 +91,6 @@ h3 {
         100% 50%, 
         100% 100%
     );
-    /* Transform is used to slightly offset the wave from the bottom edge */
     transform: translateY(1px); 
 }
 
@@ -182,7 +179,7 @@ hr {
 }
 
 
-/* --- Skills & Experience Layout --- */
+/* --- Skills & Experience Layouts --- */
 .skills-list {
     display: flex;
     justify-content: space-between;
@@ -229,6 +226,42 @@ hr {
 .experience-card .date {
     font-size: 0.9em;
     color: #999999;
+}
+
+/* --- Teaching Experience Grid (NEW) --- */
+.teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.teaching-entry {
+    background-color: #1e1e1e; /* Slightly different dark shade for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 3px solid #6c757d; /* Subtle gray-blue border */
+    transition: background-color 0.3s ease;
+}
+
+.teaching-entry:hover {
+    background-color: var(--color-secondary);
+}
+
+.teaching-entry h4 {
+    color: var(--color-primary);
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.teaching-entry p {
+    margin: 5px 0;
+}
+
+.teaching-entry .date {
+    font-size: 0.9em;
+    color: #999999;
+    margin-top: 10px;
 }
 
 /* Footer */
