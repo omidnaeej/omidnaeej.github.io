@@ -24,19 +24,32 @@
       </div>
     </div>
   </header>
-  <!-- animated waves under header -->
-  <div class="hero-waves" aria-hidden="true">
-    <svg class="wave wave-top" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,40 C150,70 350,5 600,35 C850,65 1050,95 1200,60 L1200,120 L0,120 Z"></path>
-    </svg>
-    <svg class="wave wave-mid" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,55 C200,75 400,25 600,45 C800,65 1000,85 1200,55 L1200,120 L0,120 Z"></path>
-    </svg>
-    <svg class="wave wave-bottom" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,70 C250,90 450,35 600,55 C750,75 1000,105 1200,80 L1200,120 L0,120 Z"></path>
+  <!-- Curved, animated separator under header -->
+  <div class="hero-sep" aria-hidden="true">
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="sepGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"  stop-color="#00e5ff"/>
+          <stop offset="100%" stop-color="#00ffaa"/>
+        </linearGradient>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- lower shape matches page background so no black/line -->
+      <path class="sep-fill"
+            d="M0,70 C200,40 420,10 720,40 C1020,70 1220,100 1440,70 L1440,120 L0,120 Z"/>
+      <!-- thin glowing stroke sitting on the ridge -->
+      <path class="sep-stroke"
+            d="M0,70 C200,40 420,10 720,40 C1020,70 1220,100 1440,70"
+            fill="none" stroke="url(#sepGrad)" stroke-width="4" filter="url(#softGlow)"/>
     </svg>
   </div>
-
 
 
 
@@ -121,7 +134,7 @@
       </div>
 
 
-      <p class="view-more-projects" style="text-align: center; padding: 10px;">
+      <p class="view-more-projects" style="text-align: center; padding: 10px;"></p>
         <a href="https://github.com/omidnaeej?tab=repositories" target="_blank">View all projects on GitHub →</a>
       </p>
     </section>
