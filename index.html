@@ -24,17 +24,33 @@
       </div>
     </div>
   </header>
-  <!-- Animated double-wave below header -->
-  <div class="hero-wave">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-      <path class="wave1"
-        d="M0,160L60,138.7C120,117,240,75,360,80C480,85,600,139,720,170.7C840,203,960,213,1080,192C1200,171,1320,117,1380,90.7L1440,64L1440,320L0,320Z">
-      </path>
-      <path class="wave2"
-        d="M0,180L80,170C160,160,320,140,480,150C640,160,800,190,960,200C1120,210,1280,200,1360,180L1440,160L1440,320L0,320Z">
-      </path>
+  <!-- Curved, animated separator under header -->
+  <div class="hero-sep" aria-hidden="true">
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="sepGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"  stop-color="#00e5ff"/>
+          <stop offset="100%" stop-color="#00ffaa"/>
+        </linearGradient>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- lower shape matches page background so no black/line -->
+      <path class="sep-fill"
+            d="M0,70 C200,40 420,10 720,40 C1020,70 1220,100 1440,70 L1440,120 L0,120 Z"/>
+      <!-- thin glowing stroke sitting on the ridge -->
+      <path class="sep-stroke"
+            d="M0,70 C200,40 420,10 720,40 C1020,70 1220,100 1440,70"
+            fill="none" stroke="url(#sepGrad)" stroke-width="4" filter="url(#softGlow)"/>
     </svg>
   </div>
+
 
 
 
@@ -43,82 +59,83 @@
     <!-- Projects -->
     <section id="projects" class="section">
       <h3>🤖 Featured Projects</h3>
-<div class="cards-grid">
+      <div class="cards-grid">
 
-  <article class="card">
-    <a href="https://github.com/omidnaeej/Mini-GPT" target="_blank">
-      <figure class="card-figure">
-        <img src="assets/project1.jpg" alt="Mini-GPT" loading="lazy" />
-        <div class="card-overlay-title">Mini-GPT</div>
-      </figure>
-      <div class="card-body">
-        <h3 class="card-title">Mini-GPT</h3>
-        <p class="card-desc">Trained on the <em>Friends Series'</em> dialogue dataset.</p>
-        <p class="tools"><strong>Tools:</strong> PyTorch, Transformers.</p>
+        <article class="card">
+          <a href="https://github.com/omidnaeej/Mini-GPT" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project1.jpg" alt="Mini-GPT" loading="lazy" />
+              <div class="card-overlay-title">Mini-GPT</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Mini-GPT</h3>
+              <p class="card-desc">Trained on the <em>Friends Series'</em> dialogue dataset.</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, Transformers.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a href="https://github.com/AmirEbrahiminasab/-Anomaly-Detection-for-Medical-Images-Using-Heterogeneous-Auto-Encoder" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project2.jpg" alt="Anomaly Detection" loading="lazy" />
+              <div class="card-overlay-title">Anomaly Detection</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Anomaly Detection for Medical Images</h3>
+              <p class="card-desc">Using Heterogeneous Autoencoders (Collaborated in a team).</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, Torchvision.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a href="https://github.com/omidnaeej/Image2Caption-EncoderDecoder-Attention" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project3.jpg" alt="Image Captioning" loading="lazy" />
+              <div class="card-overlay-title">Image Captioning</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Image Captioning</h3>
+              <p class="card-desc">Implemented using Encoder–Decoder Models with Attention.</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, ResNet101, LSTM.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a href="https://github.com/omidnaeej/RTT-Medical-Question-Summarization" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project4.jpg" alt="RTT Summarization" loading="lazy" />
+              <div class="card-overlay-title">RTT-Medical Summarization</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">RTT-Medical-Question-Summarization</h3>
+              <p class="card-desc">A comprehensive question summarization project.</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, Transformers, NLTK, Scikit-Learn, SciPy.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a href="https://github.com/omidnaeej/Modern-CNN-Architectures-and-Siamese-Network" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project5.jpg" alt="Siamese Network" loading="lazy" />
+              <div class="card-overlay-title">CNNs & Siamese Network</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Modern CNNs and Siamese Network</h3>
+              <p class="card-desc">Classification and Face Recognition using modern architectures.</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, EfficientNetB0.</p>
+            </div>
+          </a>
+        </article>
+
       </div>
-    </a>
-  </article>
 
-  <article class="card">
-    <a href="#" target="_blank">
-      <figure class="card-figure">
-        <img src="assets/project2.jpg" alt="Anomaly Detection" loading="lazy" />
-        <div class="card-overlay-title">Anomaly Detection</div>
-      </figure>
-      <div class="card-body">
-        <h3 class="card-title">Anomaly Detection for Medical Images</h3>
-        <p class="card-desc">Using Heterogeneous Autoencoders (Collaborated in a team).</p>
-        <p class="tools"><strong>Tools:</strong> PyTorch, Torchvision.</p>
-      </div>
-    </a>
-  </article>
-
-  <article class="card">
-    <a href="#" target="_blank">
-      <figure class="card-figure">
-        <img src="assets/project3.jpg" alt="Image Captioning" loading="lazy" />
-        <div class="card-overlay-title">Image Captioning</div>
-      </figure>
-      <div class="card-body">
-        <h3 class="card-title">Image Captioning</h3>
-        <p class="card-desc">Implemented using Encoder–Decoder Models with Attention.</p>
-        <p class="tools"><strong>Tools:</strong> PyTorch, ResNet101, LSTM.</p>
-      </div>
-    </a>
-  </article>
-
-  <article class="card">
-    <a href="https://github.com/omidnaeej/RTT-Medical-Question-Summarization" target="_blank">
-      <figure class="card-figure">
-        <img src="assets/project4.jpg" alt="RTT Summarization" loading="lazy" />
-        <div class="card-overlay-title">RTT-Medical Summarization</div>
-      </figure>
-      <div class="card-body">
-        <h3 class="card-title">RTT-Medical-Question-Summarization</h3>
-        <p class="card-desc">A comprehensive question summarization project.</p>
-        <p class="tools"><strong>Tools:</strong> PyTorch, Transformers, NLTK, Scikit-Learn, SciPy.</p>
-      </div>
-    </a>
-  </article>
-
-  <article class="card">
-    <a href="https://github.com/omidnaeej/Modern-CNN-Architectures-and-Siamese-Network" target="_blank">
-      <figure class="card-figure">
-        <img src="assets/project5.jpg" alt="Siamese Network" loading="lazy" />
-        <div class="card-overlay-title">CNNs & Siamese Network</div>
-      </figure>
-      <div class="card-body">
-        <h3 class="card-title">Modern CNNs and Siamese Network</h3>
-        <p class="card-desc">Classification and Face Recognition using modern architectures.</p>
-        <p class="tools"><strong>Tools:</strong> PyTorch, EfficientNetB0.</p>
-      </div>
-    </a>
-  </article>
-
-</div>
 
       <p class="view-more-projects">
-        <a href="https://github.com/omidnaeej?tab=repositories" target="_blank">View all projects on GitHub →</a>
+        <a href="https://github.com/omidnaeej?tab=repositories" target="_blank" style="text-align: center;">View all projects on GitHub →</a>
       </p>
     </section>
 
