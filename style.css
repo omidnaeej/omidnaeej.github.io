@@ -145,6 +145,7 @@ hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:2.5rem 0}
   transform:translateY(-6px);
   box-shadow:var(--shadow-hover);
   background:linear-gradient(180deg,#0e2639,#143652);
+  
 }
 
 /* titles/links */
@@ -159,6 +160,7 @@ hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:2.5rem 0}
 .project-card h4 a:hover,
 .card .card-title a:hover{color:var(--teal-2);text-shadow:0 0 6px var(--teal-2)}
 .tools,.date,.card-desc{color:var(--muted)}
+.card-desc:hover{  text-decoration: none;}
 
 /* ========== Skills (restore) ========== */
 .skills-list{
