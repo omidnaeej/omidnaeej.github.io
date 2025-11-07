@@ -66,6 +66,28 @@ body{
   z-index: 2;
 }
 
+/* === Decorative Wave Below Header === */
+.hero-wave {
+  position: relative;
+  width: 100%;
+  margin-top: -5px;
+  z-index: 1;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: waveFloat 10s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 10px #00e5ff44);
+}
+
+/* Gentle wave motion */
+@keyframes waveFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(10px); }
+}
+
 /* ========== Section headings, hr ========== */
 .section h3{margin:2.2rem 0 1.2rem;font-size:1.4rem}
 hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:2.5rem 0}
