@@ -67,27 +67,50 @@ body{
   text-align:center
 }
 
-/* === Decorative Wave Below Header === */
+/* === Animated Cyan Wave Below Header === */
 .hero-wave {
   position: relative;
   width: 100%;
-  margin-top: -5px;
+  overflow: hidden;
+  line-height: 0;
   z-index: 1;
+  margin-top: -5px;
 }
 
 .hero-wave svg {
   display: block;
   width: 100%;
-  height: auto;
-  animation: waveFloat 10s ease-in-out infinite alternate;
-  filter: drop-shadow(0 0 10px #00e5ff44);
+  height: 140px;
 }
 
-/* Gentle wave motion */
-@keyframes waveFloat {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(10px); }
+.hero-wave path {
+  stroke: none;
+  transform-origin: center;
 }
+
+/* First wave: bright cyan */
+.wave1 {
+  fill: rgba(0, 229, 255, 0.8);
+  animation: waveMove 10s linear infinite;
+}
+
+/* Second wave: lighter layer for depth */
+.wave2 {
+  fill: rgba(0, 255, 255, 0.35);
+  animation: waveMoveReverse 14s linear infinite;
+}
+
+/* Horizontal movement */
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100px); }
+}
+
+@keyframes waveMoveReverse {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}
+
 
 /* ========== Section headings, hr ========== */
 .section h3{margin:2.2rem 0 1.2rem;font-size:1.4rem}
