@@ -60,6 +60,12 @@ body{
 .hero a{color:var(--teal);text-decoration:none}
 .hero a:hover{color:var(--teal-2);text-shadow:0 0 6px var(--teal-2)}
 
+.hero .container,
+.hero .contact-links {
+  position: relative;
+  z-index: 2;
+}
+
 /* ========== Section headings, hr ========== */
 .section h3{margin:2.2rem 0 1.2rem;font-size:1.4rem}
 hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:2.5rem 0}
