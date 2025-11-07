@@ -12,13 +12,13 @@
   --radius:14px;
 }
 
-a {
+.a-link-title {
     color: var(--teal);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-a:hover {
+.a-link-title:hover {
     color: var(--teal-2); 
     text-decoration: underline;
 }
