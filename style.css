@@ -12,16 +12,16 @@
   --radius:14px;
 }
 
-/* a {
+a {
     color: var(--teal);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #ffffff; 
+    color: var(--teal-2); 
     text-decoration: underline;
-} */
+}
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
