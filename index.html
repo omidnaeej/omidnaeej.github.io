@@ -2,294 +2,299 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Omid Naeej Nejad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AI enthusiast and Computer Science bachelor's student at the University of Tehran." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrapper header-inner">
-      <div class="site-title">
-        <a href="#top">Omid Naeej Nejad</a>
+  <header class="hero">
+    <div class="container">
+      <h1>Omid Naeej Nejad</h1>
+      <h2>AI Enthusiast | Computer Science Bachelor's Student at University of Tehran</h2>
+      <p class="bio-statement">
+        Focused on Unified Multimodal AI (Text, Images, Audio, Video),
+        <strong>Explainable Visual Reasoning</strong>, and
+        <strong>AI in Real-World Domains & Interdisciplinary Apps</strong>.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:omidnaeejnejad@gmail.com">Email</a> |
+        <a href="https://www.linkedin.com/in/omid-naeej-nejad" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/omidnaeej" target="_blank">GitHub</a> |
+        <span>Tehran, Iran</span>
       </div>
-      <nav class="site-nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#skills">Skills</a>
-      </nav>
     </div>
   </header>
+  <!-- Curved, animated separator under header -->
+  <div class="hero-sep" aria-hidden="true">
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="sepGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"  stop-color="#00e5ff"/>
+          <stop offset="100%" stop-color="#00ffaa"/>
+        </linearGradient>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
 
-  <main class="page" id="top">
-    <section id="about" class="section hero">
-      <div class="wrapper">
-        <p class="eyebrow">AI Enthusiast · Computer Science Bachelor's Student</p>
-        <h1>Omid Naeej Nejad</h1>
-        <p class="subtitle">
-          Focused on Unified Multimodal AI (text, images, audio, video), explainable visual reasoning,
-          and AI for real-world and interdisciplinary applications.
-        </p>
+      <!-- lower shape matches page background so no black/line -->
+      <path class="sep-fill"
+            d="M0,70 C200,40 420,10 720,40 C1020,70 1220,100 1440,70 L1440,120 L0,120 Z"/>
+      <!-- thin glowing stroke sitting on the ridge -->
+      <path class="sep-stroke"
+            d="M0,70 C200,40 420,10 720,40 C1020,70 1220,100 1440,70"
+            fill="none" stroke="url(#sepGrad)" stroke-width="4" filter="url(#softGlow)"/>
+    </svg>
+  </div>
 
-        <div class="meta-row">
-          <div class="meta-group">
-            <span class="meta-label">Location</span>
-            <span class="meta-value">Tehran, Iran</span>
-          </div>
-          <div class="meta-group">
-            <span class="meta-label">Links</span>
-            <span class="meta-links">
-              <!-- Replace YOUR_EMAIL_HERE with your real address -->
-              <a href="mailto:YOUR_EMAIL_HERE">Email</a>
-              <span class="dot">·</span>
-              <a href="https://www.linkedin.com/in/omid-naeej-nejad-1856712b7" target="_blank" rel="noreferrer">LinkedIn</a>
-              <span class="dot">·</span>
-              <a href="https://github.com/omidnaeej" target="_blank" rel="noreferrer">GitHub</a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
 
+
+
+  <main class="container">
+
+    <!-- Projects -->
     <section id="projects" class="section">
-      <div class="wrapper">
-        <h2>Featured Projects</h2>
-        <p class="section-intro">
-          A selection of projects spanning language modeling, medical AI, image captioning, and modern CNN architectures.
-        </p>
+      <h3>🤖 Featured Projects</h3>
+      <div class="cards-grid">
 
-        <div class="card-grid">
-          <article class="card">
-            <h3>
-              <a href="https://github.com/omidnaeej/Mini-GPT" target="_blank" rel="noreferrer">Mini-GPT</a>
-            </h3>
-            <p class="card-tagline">
-              Simplified GPT trained on the Friends Series dialogue dataset.
-            </p>
-            <p class="card-body">
-              Built with PyTorch and transformer architectures to generate dialogue-like text from TV script data.
-            </p>
-            <p class="card-meta">Tools: PyTorch, Transformers</p>
-          </article>
-
-          <article class="card">
-            <h3>
-              <a href="https://github.com/AmirEbrahiminasab/-Anomaly-Detection-for-Medical-Images-Using-Heterogeneous-Auto-Encoder"
-                 target="_blank" rel="noreferrer">Anomaly Detection</a>
-            </h3>
-            <p class="card-tagline">
-              Anomaly detection for medical images using heterogeneous autoencoders.
-            </p>
-            <p class="card-body">
-              Team project exploring unsupervised anomaly detection for medical imaging pipelines.
-            </p>
-            <p class="card-meta">Tools: PyTorch, Torchvision</p>
-          </article>
-
-          <article class="card">
-            <h3>
-              <a href="https://github.com/omidnaeej/Image2Caption-EncoderDecoder-Attention"
-                 target="_blank" rel="noreferrer">Image Captioning</a>
-            </h3>
-            <p class="card-tagline">
-              Encoder–decoder captioning with attention.
-            </p>
-            <p class="card-body">
-              ResNet + LSTM-based captioning system with attention, beam search, and training/evaluation pipeline.
-            </p>
-            <p class="card-meta">Tools: PyTorch, ResNet, LSTM</p>
-          </article>
-
-          <article class="card">
-            <h3>
-              <a href="https://github.com/omidnaeej/RTT-Medical-Question-Summarization"
-                 target="_blank" rel="noreferrer">RTT Medical Summarization</a>
-            </h3>
-            <p class="card-tagline">
-              Round-trip translation augmented medical question summarization.
-            </p>
-            <p class="card-body">
-              Comprehensive question summarization pipeline using transformers and classical NLP tools.
-            </p>
-            <p class="card-meta">Tools: PyTorch, Transformers, NLTK, Scikit-learn, SciPy</p>
-          </article>
-
-          <article class="card">
-            <h3>
-              <a href="https://github.com/omidnaeej/Modern-CNN-Architectures-and-Siamese-Network"
-                 target="_blank" rel="noreferrer">Modern CNNs & Siamese Network</a>
-            </h3>
-            <p class="card-tagline">
-              Modern CNNs for CIFAR-10 and Siamese networks for face recognition.
-            </p>
-            <p class="card-body">
-              Implements EfficientNet and Siamese architectures with training, evaluation, and visualization utilities.
-            </p>
-            <p class="card-meta">Tools: PyTorch, EfficientNet</p>
-          </article>
-        </div>
-
-        <div class="more-link">
-          <a href="https://github.com/omidnaeej?tab=repositories" target="_blank" rel="noreferrer">
-            View all projects on GitHub →
+        <article class="card">
+          <a href="https://github.com/omidnaeej/Mini-GPT" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project1.jpg" alt="Mini-GPT" loading="lazy" />
+              <div class="card-overlay-title a-link-title">Mini-GPT</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Mini-GPT</h3>
+              <p class="card-desc">Trained on the <em>Friends Series'</em> dialogue dataset.</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, Transformers.</p>
+            </div>
           </a>
+        </article>
+
+        <article class="card">
+          <a href="https://github.com/AmirEbrahiminasab/-Anomaly-Detection-for-Medical-Images-Using-Heterogeneous-Auto-Encoder" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project2.jpg" alt="Anomaly Detection" loading="lazy" />
+              <div class="card-overlay-title a-link-title">Anomaly Detection</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Anomaly Detection for Medical Images</h3>
+              <p class="card-desc">Using Heterogeneous Autoencoders (Collaborated in a team).</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, Torchvision.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a href="https://github.com/omidnaeej/Image2Caption-EncoderDecoder-Attention" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project3.jpg" alt="Image Captioning" loading="lazy" />
+              <div class="card-overlay-title a-link-title">Image Captioning</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Image Captioning</h3>
+              <p class="card-desc">Implemented using Encoder–Decoder Models with Attention.</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, ResNet101, LSTM.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a href="https://github.com/omidnaeej/RTT-Medical-Question-Summarization" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project4.jpg" alt="RTT Summarization" loading="lazy" />
+              <div class="card-overlay-title a-link-title">RTT-Medical Summarization</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">RTT-Medical-Question-Summarization</h3>
+              <p class="card-desc">A comprehensive question summarization project.</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, Transformers, NLTK, Scikit-Learn, SciPy.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a href="https://github.com/omidnaeej/Modern-CNN-Architectures-and-Siamese-Network" target="_blank">
+            <figure class="card-figure">
+              <img src="assets/project5.jpg" alt="Siamese Network" loading="lazy" />
+              <div class="card-overlay-title a-link-title">CNNs with Inception Modules & Siamese Network</div>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Modern CNNs and Siamese Network</h3>
+              <p class="card-desc">Classification and Face Recognition using modern architectures.</p>
+              <p class="tools"><strong>Tools:</strong> PyTorch, EfficientNetB0.</p>
+            </div>
+          </a>
+        </article>
+
+      </div>
+
+
+      <p class="view-more-projects" style="text-align: center; padding: 10px;"></p>
+        <a href="https://github.com/omidnaeej?tab=repositories" target="_blank">View all projects on GitHub →</a>
+      </p>
+    </section>
+
+    <hr />
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h3>🛠️ Technical Skills</h3>
+      <div class="skills-list">
+        <div>
+          <h4>Data Science & ML</h4>
+          <p>PyTorch, NLTK, TensorFlow, Scikit-learn, Matplotlib.</p>
+        </div>
+        <div>
+          <h4>Programming Languages</h4>
+          <p>Python, C++, C, Java, Assembly.</p>
+        </div>
+        <div>
+          <h4>DevOps & Databases</h4>
+          <p>Git, GitHub, Docker (familiar), MySQL.</p>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section section-alt">
-      <div class="wrapper">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="skills-group">
-            <h3>Data Science & Machine Learning</h3>
-            <p>PyTorch, NLTK, TensorFlow, Scikit-learn, Matplotlib</p>
+    <hr />
+
+    <!-- Experience & Education -->
+    <section id="experience-education" class="section">
+      <h3>🎓 Experience & Education</h3>
+      <div class="cards-grid">
+
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/research.jpg" alt="Research" loading="lazy" />
+            <div class="card-overlay-title">Research Experience</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Research Assistant</h3>
+            <p class="card-desc">Applied AI Lab - University of Tehran</p>
+            <p class="date">Nov 2024 – Present</p>
+            <p>Contributed to AI in Finance, Digital Transformation, and RAG-based chatbot projects.</p>
           </div>
-          <div class="skills-group">
-            <h3>Programming Languages</h3>
-            <p>Python, C++, C, Java, Assembly</p>
+        </article>
+
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/work.jpg" alt="Work" loading="lazy" />
+            <div class="card-overlay-title">Work Experience</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Junior AI Engineer</h3>
+            <p class="card-desc">GREEN - Pardis Sanat Siyare Sabz Company</p>
+            <p class="date">May 2025 – Present</p>
+            <p>Researched data management systems and developed BI dashboards.</p>
           </div>
-          <div class="skills-group">
-            <h3>DevOps & Databases</h3>
-            <p>Git, GitHub, Docker (familiar), MySQL</p>
+        </article>
+
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/education.jpg" alt="Education" loading="lazy" />
+            <div class="card-overlay-title">Education</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Bachelor in Computer Science</h3>
+            <p class="card-desc">University of Tehran</p>
+            <p class="date">Sep 2022 – Present</p>
           </div>
-        </div>
+        </article>
       </div>
-    </section>
 
-    <section id="experience" class="section">
-      <div class="wrapper">
-        <h2>Experience & Education</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>Research Assistant</h3>
-              <p class="timeline-place">Applied AI Lab – University of Tehran</p>
-              <p class="timeline-dates">Nov 2024 – Present</p>
-              <p class="timeline-body">
-                Contributing to projects in AI for finance, digital transformation, and RAG-based chatbots.
-              </p>
-            </div>
+      <!-- Teaching -->
+      <h3 style="margin-top: 40px;">👨‍🏫 Teaching Experience</h3>
+      <div class="cards-grid">
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/teaching1.jpg" alt="Teaching" loading="lazy" />
+            <div class="card-overlay-title">Advanced Information Retrieval</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Chief TA: Advanced Information Retrieval</h3>
+            <p class="card-desc">Managed TA team, designed assignments, and contributed to project design.</p>
+            <p class="date">University of Tehran</p>
           </div>
+        </article>
 
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>Junior AI Engineer</h3>
-              <p class="timeline-place">GREEN – Pardis Sanat Siyare Sabz Company</p>
-              <p class="timeline-dates">May 2025 – Present</p>
-              <p class="timeline-body">
-                Researching data management systems and developing business intelligence dashboards.
-              </p>
-            </div>
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/teaching2.jpg" alt="Teaching" loading="lazy" />
+            <div class="card-overlay-title">Bio Computing</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Chief TA: Bio Computing</h3>
+            <p class="card-desc">Managed TA team, developed assignments, and supervised projects.</p>
+            <p class="date">University of Tehran</p>
           </div>
+        </article>
 
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3>Bachelor in Computer Science</h3>
-              <p class="timeline-place">University of Tehran</p>
-              <p class="timeline-dates">Sep 2022 – Present</p>
-              <p class="timeline-body">
-                Computer Science bachelor's degree with a focus on artificial intelligence and machine learning.
-              </p>
-            </div>
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/teaching3.jpg" alt="Teaching" loading="lazy" />
+            <div class="card-overlay-title">Data Structures</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Chief TA: Data Structures & Algorithms</h3>
+            <p class="card-desc">Oversaw grading and assignment design, coordinated TA efforts.</p>
+            <p class="date">University of Tehran</p>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section id="teaching" class="section section-alt">
-      <div class="wrapper">
-        <h2>Teaching Experience</h2>
-
-        <div class="card-list">
-          <article class="card card-horizontal">
-            <div class="card-content">
-              <h3>Chief TA – Advanced Information Retrieval</h3>
-              <p class="card-meta">University of Tehran</p>
-              <p class="card-body">
-                Managed the TA team, designed assignments, and contributed to project design.
-              </p>
-            </div>
-          </article>
-
-          <article class="card card-horizontal">
-            <div class="card-content">
-              <h3>Chief TA – Bio Computing</h3>
-              <p class="card-meta">University of Tehran</p>
-              <p class="card-body">
-                Developed assignments and supervised student projects in bio-inspired computing topics.
-              </p>
-            </div>
-          </article>
-
-          <article class="card card-horizontal">
-            <div class="card-content">
-              <h3>Chief TA – Data Structures & Algorithms</h3>
-              <p class="card-meta">University of Tehran</p>
-              <p class="card-body">
-                Oversaw grading and assignment design, and coordinated the TA team.
-              </p>
-            </div>
-          </article>
-
-          <article class="card card-horizontal">
-            <div class="card-content">
-              <h3>TA – Data Mining</h3>
-              <p class="card-meta">University of Tehran</p>
-              <p class="card-body">
-                Designed and graded assignments and quizzes, and supported students throughout the course.
-              </p>
-            </div>
-          </article>
-
-          <article class="card card-horizontal">
-            <div class="card-content">
-              <h3>TA – Basic Programming</h3>
-              <p class="card-meta">University of Tehran</p>
-              <p class="card-body">
-                Developed and graded exercises and provided support for introductory programming students.
-              </p>
-            </div>
-          </article>
-
-          <article class="card card-horizontal">
-            <div class="card-content">
-              <h3>TA – Advanced Programming</h3>
-              <p class="card-meta">University of Tehran</p>
-              <p class="card-body">
-                Assisted with advanced topics, assignments, and student guidance.
-              </p>
-            </div>
-          </article>
-
-          <article class="card card-horizontal">
-            <div class="card-content">
-              <h3>TA – Operating Systems</h3>
-              <p class="card-meta">University of Tehran</p>
-              <p class="card-body">
-                Designed and graded assignments and quizzes for operating systems concepts.
-              </p>
-            </div>
-          </article>
-        </div>
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/teaching3.jpg" alt="Teaching" loading="lazy" />
+            <div class="card-overlay-title">Data Mining</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">TA: Data Mining</h3>
+            <p class="card-desc">Designed and graded assignments/quizzes, and provided student support.</p>
+            <p class="date">University of Tehran</p>
+          </div>
+        </article>
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/teaching3.jpg" alt="Teaching" loading="lazy" />
+            <div class="card-overlay-title">Basic Programming</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">TA: Basic Programming</h3>
+            <p class="card-desc">Designed and graded assignments/quizzes, and provided student support.</p>
+            <p class="date">University of Tehran</p>
+          </div>
+        </article>
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/teaching3.jpg" alt="Teaching" loading="lazy" />
+            <div class="card-overlay-title">Advanced Programming</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">TA: Advanced Programming</h3>
+            <p class="card-desc">Designed and graded assignments/quizzes, and provided student support.</p>
+            <p class="date">University of Tehran</p>
+          </div>
+        </article>
+        <article class="card">
+          <figure class="card-figure">
+            <img src="assets/teaching3.jpg" alt="Teaching" loading="lazy" />
+            <div class="card-overlay-title">Operating Systems</div>
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">TA: Operating Systems</h3>
+            <p class="card-desc">Designed and graded assignments/quizzes, and provided student support.</p>
+            <p class="date">University of Tehran</p>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrapper footer-inner">
-      <span>© <span id="year"></span> Omid Naeej Nejad</span>
-      <span class="footer-meta">Built as a minimalist academic portfolio · Hosted on GitHub Pages</span>
-    </div>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+  <footer>
+    <p>Built for a casual portfolio display | Powered by GitHub Pages.</p>
   </footer>
 </body>
 </html>
