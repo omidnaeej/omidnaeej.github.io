@@ -19,8 +19,7 @@ a {
 }
 
 a:hover {
-    color: var(--teal-2); 
-    /* text-decoration: underline; */
+    color: var(--teal-2);
 }
 
 *{box-sizing:border-box}
@@ -32,7 +31,7 @@ body{
 }
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
 
-/* ========== Hero (restore original vibe) ========== */
+/* ========== Hero ========== */
 .hero{
   position:relative;
   background:linear-gradient(120deg,#020c1b,#0a192f,#001a33);
@@ -67,74 +66,102 @@ body{
   text-align:center
 }
 
-/* separator container */
+/* ====================== HERO SEPARATOR ======================= */
 .hero-sep{
   position:relative;
   width:100%;
   height:120px;
-  background:var(--page-bg); /* ensures the area below is same as page bg */
-  margin-top:-1px;           /* hides any seam */
+  background:var(--page-bg);
+  margin-top:-1px;
   overflow:hidden;
   z-index:1;
 }
 
-/* svg sizing and animation */
 .hero-wave{
   position:absolute;
   inset:0;
-  width:115%;      /* a little wider so ends don’t show while moving */
+  width:115%;
   height:100%;
   pointer-events:none;
-}
-
-/* animate the whole wave group horizontally for a gentle flow */
-.hero-wave{
   animation:sepDrift 14s linear infinite;
 }
+
+/* horizontal gentle drift (your original) */
 @keyframes sepDrift{
   from{ transform: translateX(0); }
   to{   transform: translateX(-80px); }
 }
 
-/* the lower shape uses the page bg = no black strip */
+/* lower fill matches background */
 .sep-fill{ fill:var(--bg-1); }
 
-/* optional: if you want the glow stronger, bump stroke-width to 6 */
-.sep-stroke{ stroke-linecap:round; }
+/* stroke base */
+.sep-stroke{
+  stroke-linecap:round;
+}
 
+/* ===============================================================
+   🔥 NEW ENHANCEMENTS — fully backward compatible
+   ============================================================== */
 
+/* 1) Soft floating motion (vertical breathing) */
+.sep-stroke {
+  animation: waveFloat 6s ease-in-out infinite;
+}
+
+@keyframes waveFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+
+/* 2) Slow color shimmer inside gradient */
+#sepGrad stop {
+  animation: gradShift 8s ease-in-out infinite;
+}
+
+@keyframes gradShift {
+  0%   { stop-color: #00e5ff; }
+  50%  { stop-color: #00ffaa; }
+  100% { stop-color: #00e5ff; }
+}
+
+/* 3) Slightly stronger glow for visibility */
+svg filter#softGlow feGaussianBlur {
+  stdDeviation: 7;
+}
+
+/* =============================================================== */
 
 /* ========== Section headings, hr ========== */
 .section h3{margin:2.2rem 0 1.2rem;font-size:1.4rem}
 hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:2.5rem 0}
 
 /* ========== ROLLBACK conflicting experimental styles ========== */
-/* Neutralize overlay experiment without touching your markup */
 .cards-grid,.card,.card-figure,.card-overlay-title,.card-body{
-  /* remove the overlay/grid look if it exists */
   background:none;box-shadow:none;border:0;margin:0;padding:0;
 }
-.card-figure,.card-overlay-title{display:none} /* hide overlay bits */
-.cards-grid{display:block} /* let the original grid style below handle it */
+.card-figure,.card-overlay-title{display:none}
+.cards-grid{display:block}
 .card-overlay-title:hover{
     text-decoration: underline;
 }
 
-/* ========== Restored GRID like your first style ========== */
+/* ========== GRID ========== */
 .project-grid,
 .teaching-grid,
 .columns-2,
-.cards-grid /* support both old and new wrappers */{
+.cards-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:24px;
 }
 
-/* ========== Restored CARD look (apply to all card types) ========== */
+/* ========== Cards ========== */
 .project-card,
 .experience-card,
 .research-card,
-.card /* new markup gets same look */{
+.card{
   background:linear-gradient(180deg,var(--panel-1),var(--panel-2));
   border-radius:var(--radius);
   box-shadow:var(--shadow);
@@ -150,7 +177,7 @@ hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:2.5rem 0}
   background:linear-gradient(180deg,#0e2639,#143652);
 }
 
-/* titles/links */
+/* titles */
 .project-card h4 a,
 .card .card-title a,
 .experience-card h4,
@@ -161,9 +188,10 @@ hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:2.5rem 0}
 }
 .project-card h4 a:hover,
 .card .card-title a:hover{color:var(--teal-2);text-shadow:0 0 6px var(--teal-2)}
+
 .tools,.date,.card-desc{color:var(--muted)}
 
-/* ========== Skills (restore) ========== */
+/* ========== Skills ========== */
 .skills-list{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -171,15 +199,15 @@ hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:2.5rem 0}
 }
 .skills-list h4{margin:.25rem 0 .5rem}
 
-/* ========== Experience columns (restore) ========== */
+/* ========== Two-column layout ========== */
 .columns-2{
   grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 }
 
-/* ========== Footer (simple) ========== */
+/* ========== Footer ========== */
 footer{color:#9fb2c6;text-align:center;padding:2rem 0 3rem}
 
-/* ========== Responsive hero text ========== */
+/* ========== Responsive hero ========== */
 @media (max-width:1024px){
   .hero{padding:5rem 1.5rem 4.5rem}
   .hero h1{font-size:2.8rem}
