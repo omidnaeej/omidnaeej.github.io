@@ -186,7 +186,7 @@ h1, h2, h3, h4 {
 }
 
 /* ── Chips / Tags ───────────────────────────────────────────── */
-.chip {
+.chip .tag {
   display: inline-flex;
   align-items: center;
   font-size: 0.72rem;
